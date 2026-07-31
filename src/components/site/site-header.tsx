@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { ThemeToggle } from "./theme-toggle";
 
 const LINKS = [
   ["Process", "#process"],
