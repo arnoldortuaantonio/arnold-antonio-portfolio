@@ -39,7 +39,7 @@ export const Route = createFileRoute("/")({
 function Index() {
   return (
     <div className="relative min-h-screen bg-black">
-      <CursorGlow />
+      <CyberCursor />
       <SiteHeader />
       <main className="relative z-10">
         <Hero />
