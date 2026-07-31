@@ -162,3 +162,257 @@
     linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
   background-size: 72px 72px;
 }
+
+/* ---------- theme cutout helper ---------- */
+:root {
+  --cutout: #000000;
+}
+
+/* ---------- Light mode ---------- */
+html.light {
+  color-scheme: light;
+  --cutout: #f6f5f2;
+  --background: oklch(0.975 0.004 90);
+  --foreground: oklch(0.18 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.18 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.18 0 0);
+  --primary: oklch(0.18 0 0);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.94 0.004 90);
+  --secondary-foreground: oklch(0.2 0 0);
+  --muted: oklch(0.94 0.004 90);
+  --muted-foreground: oklch(0.45 0 0);
+  --accent: oklch(0.92 0.006 90);
+  --accent-foreground: oklch(0.2 0 0);
+  --border: oklch(0.2 0 0 / 12%);
+  --input: oklch(0.2 0 0 / 16%);
+  --champagne: oklch(0.62 0.09 78);
+}
+
+html.light body {
+  background-color: #f6f5f2;
+  color: #111111;
+}
+
+html.light .bg-black,
+html.light .bg-black\/40,
+html.light .bg-black\/60,
+html.light .bg-black\/90 {
+  background-color: #f6f5f2;
+}
+html.light .bg-black\/40 {
+  background-color: rgba(0, 0, 0, 0.03);
+}
+html.light .bg-black\/60,
+html.light .bg-black\/90 {
+  background-color: rgba(246, 245, 242, 0.75);
+}
+html.light .bg-white,
+html.light .hover\:bg-white:hover {
+  background-color: #111111;
+}
+html.light .bg-white\/5,
+html.light .bg-white\/\[0\.03\] {
+  background-color: rgba(0, 0, 0, 0.035);
+}
+html.light .text-white,
+html.light .hover\:text-white:hover,
+html.light .group:hover .group-hover\:text-white {
+  color: #111111;
+}
+html.light .text-black {
+  color: #f6f5f2;
+}
+html.light .text-neutral-200 {
+  color: #262626;
+}
+html.light .text-neutral-300 {
+  color: #333333;
+}
+html.light .text-neutral-400 {
+  color: #4b4b4b;
+}
+html.light .text-neutral-500 {
+  color: #6b6b6b;
+}
+html.light .text-neutral-600 {
+  color: #7d7d7d;
+}
+html.light .border-white\/5,
+html.light .border-white\/10,
+html.light .border-white\/12,
+html.light .border-white\/15,
+html.light .border-white\/25,
+html.light .border-white\/40,
+html.light .hover\:border-white\/25:hover,
+html.light .hover\:border-white\/40:hover {
+  border-color: rgba(0, 0, 0, 0.12);
+}
+html.light .bg-white\/5 svg,
+html.light .text-gradient-silver {
+  background-image: linear-gradient(180deg, #1a1a1a 0%, #333333 55%, #6a6a6a 100%);
+}
+html.light .bg-champagne {
+  background-color: var(--champagne);
+}
+html.light .grid-noise {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+}
+
+/* ---------- Cyberpunk cursor ---------- */
+.cyber-cursor-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  display: none;
+}
+
+@media (pointer: fine) {
+  .cyber-cursor-layer {
+    display: block;
+  }
+  html.cyber-cursor-active,
+  html.cyber-cursor-active * {
+    cursor: none !important;
+  }
+}
+
+.cyber-dot,
+.cyber-ring,
+.cyber-trail,
+.cyber-glow {
+  position: fixed;
+  left: 0;
+  top: 0;
+  will-change: transform;
+}
+
+.cyber-dot {
+  height: 6px;
+  width: 6px;
+  border-radius: 9999px;
+  background: #00fff0;
+  box-shadow:
+    0 0 6px #00fff0,
+    0 0 18px rgba(0, 255, 240, 0.7);
+}
+
+.cyber-trail {
+  height: 26px;
+  width: 26px;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 0, 128, 0.55);
+  box-shadow: 0 0 14px rgba(255, 0, 128, 0.35);
+  opacity: 0.7;
+}
+
+.cyber-glow {
+  height: 360px;
+  width: 360px;
+  border-radius: 9999px;
+  filter: blur(60px);
+  opacity: 0.55;
+  background: radial-gradient(
+    circle,
+    rgba(0, 255, 240, 0.16) 0%,
+    rgba(255, 0, 128, 0.1) 45%,
+    transparent 70%
+  );
+}
+
+.cyber-ring {
+  height: 38px;
+  width: 38px;
+  border-radius: 9999px;
+  border: 1px solid rgba(0, 255, 240, 0.75);
+  box-shadow:
+    0 0 12px rgba(0, 255, 240, 0.35),
+    inset 0 0 10px rgba(0, 255, 240, 0.18);
+  transition:
+    height 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+    width 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.25s ease,
+    opacity 0.25s ease;
+  animation: cyber-spin 4s linear infinite;
+}
+
+.cyber-ring[data-active="true"] {
+  height: 58px;
+  width: 58px;
+  border-color: rgba(255, 0, 128, 0.85);
+  box-shadow:
+    0 0 18px rgba(255, 0, 128, 0.45),
+    inset 0 0 14px rgba(255, 0, 128, 0.2);
+}
+
+.cyber-ring[data-press="true"] {
+  height: 26px;
+  width: 26px;
+}
+
+.cyber-tick {
+  position: absolute;
+  background: currentColor;
+  color: rgba(0, 255, 240, 0.9);
+}
+.cyber-ring[data-active="true"] .cyber-tick {
+  color: rgba(255, 0, 128, 0.95);
+}
+.cyber-tick-t,
+.cyber-tick-b {
+  left: 50%;
+  height: 5px;
+  width: 1px;
+  margin-left: -0.5px;
+}
+.cyber-tick-t {
+  top: -7px;
+}
+.cyber-tick-b {
+  bottom: -7px;
+}
+.cyber-tick-l,
+.cyber-tick-r {
+  top: 50%;
+  width: 5px;
+  height: 1px;
+  margin-top: -0.5px;
+}
+.cyber-tick-l {
+  left: -7px;
+}
+.cyber-tick-r {
+  right: -7px;
+}
+
+@keyframes cyber-spin {
+  from {
+    rotate: 0deg;
+  }
+  to {
+    rotate: 360deg;
+  }
+}
+
+html.light .from-black {
+  --tw-gradient-from: #f6f5f2;
+}
+html.light .via-black\/50 {
+  --tw-gradient-via: rgba(246, 245, 242, 0.55);
+}
+html.light .from-white\/10 {
+  --tw-gradient-from: rgba(0, 0, 0, 0.07);
+}
+html.light .bg-neutral-900 {
+  background-color: #e9e7e2;
+}
+
+html.light .from-black.to-transparent,
+html.light .via-black\/50 {
+  --tw-gradient-to: rgba(246, 245, 242, 0);
+}

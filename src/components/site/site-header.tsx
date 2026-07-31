@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { ThemeToggle } from "./theme-toggle";
 
 const LINKS = [
   ["Process", "#process"],
@@ -52,6 +53,7 @@ export function SiteHeader() {
         </nav>
 
         <div className="flex shrink-0 items-center gap-2">
+          <ThemeToggle />
           <a
             href="#contact"
             className="hidden rounded-full bg-white px-5 py-2 text-[13px] font-semibold text-black transition-transform duration-300 hover:scale-[1.03] sm:inline-flex"

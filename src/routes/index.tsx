@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { CursorGlow } from "@/components/site/primitives";
+import { CyberCursor } from "@/components/site/cyber-cursor";
 import { SiteHeader } from "@/components/site/site-header";
 import { Hero } from "@/components/site/hero";
 import { Process, TechStack, Services, Experience } from "@/components/site/sections";
@@ -39,7 +39,7 @@ export const Route = createFileRoute("/")({
 function Index() {
   return (
     <div className="relative min-h-screen bg-black">
-      <CursorGlow />
+      <CyberCursor />
       <SiteHeader />
       <main className="relative z-10">
         <Hero />
