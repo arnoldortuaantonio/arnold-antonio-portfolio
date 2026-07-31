@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { CursorGlow } from "@/components/site/primitives";
+import { CyberCursor } from "@/components/site/cyber-cursor";
 import { SiteHeader } from "@/components/site/site-header";
 import { Hero } from "@/components/site/hero";
 import { Process, TechStack, Services, Experience } from "@/components/site/sections";
