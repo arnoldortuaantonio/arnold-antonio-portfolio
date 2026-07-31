@@ -46,50 +46,48 @@ export function ThemeToggle() {
       />
       <svg
         viewBox="0 0 24 24"
-        className="relative h-[18px] w-[18px]"
+        className="relative h-[18px] w-[18px] text-white transition-transform duration-700"
+        style={{ transform: isDark ? "rotate(0deg)" : "rotate(180deg)" }}
         fill="none"
         stroke="currentColor"
         strokeWidth="1.6"
         strokeLinecap="round"
+        strokeLinejoin="round"
         aria-hidden
       >
-        {/* sun core / moon disc */}
-        <circle
-          cx="12"
-          cy="12"
-          r={isDark ? 8.6 : 4.6}
-          className="text-white transition-all duration-500"
-          style={{ transformOrigin: "center" }}
-        />
-        {/* moon cutout */}
-        <circle
-          cx={isDark ? 16.5 : 24}
-          cy={isDark ? 8 : 0}
-          r="7.5"
-          fill="var(--cutout)"
-          stroke="none"
+        {/* moon */}
+        <path
+          d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"
           className="transition-all duration-500"
+          style={{
+            opacity: isDark ? 1 : 0,
+            transformOrigin: "center",
+            transform: isDark ? "scale(1)" : "scale(0.4)",
+          }}
         />
-        {/* sun rays */}
+        {/* sun */}
         <g
-          className="origin-center transition-all duration-500"
+          className="transition-all duration-500"
           style={{
             opacity: isDark ? 0 : 1,
-            transform: isDark ? "rotate(-90deg) scale(0.4)" : "rotate(0deg) scale(1)",
+            transformOrigin: "center",
+            transform: isDark ? "scale(0.4)" : "scale(1)",
           }}
         >
+          <circle cx="12" cy="12" r="4.4" />
           {[0, 45, 90, 135, 180, 225, 270, 315].map((deg) => (
             <line
               key={deg}
               x1="12"
-              y1="1.6"
+              y1="1.8"
               x2="12"
-              y2="4"
+              y2="4.2"
               transform={`rotate(${deg} 12 12)`}
             />
           ))}
         </g>
       </svg>
+
     </button>
   );
 }
