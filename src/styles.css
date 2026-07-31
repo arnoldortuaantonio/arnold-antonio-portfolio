@@ -411,3 +411,8 @@ html.light .from-white\/10 {
 html.light .bg-neutral-900 {
   background-color: #e9e7e2;
 }
+
+html.light .from-black.to-transparent,
+html.light .via-black\/50 {
+  --tw-gradient-to: rgba(246, 245, 242, 0);
+}
