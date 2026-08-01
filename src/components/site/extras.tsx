@@ -7,20 +7,25 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import n8n1 from "@/assets/1.n8n_First_Workflows.jpg.asset.json";
-import n8n2 from "@/assets/2.n8n_API_Connected_Workflows.jpg.asset.json";
-import n8n3 from "@/assets/3.n8n_AI_Testing_Best_Practices.jpg.asset.json";
-import n8nLvl2 from "@/assets/4.n8n_Level_2Cert.png.asset.json";
-import zapAgents from "@/assets/Building_AI_Agents.jpg.asset.json";
-import zapZaps from "@/assets/Building_Intermediate_Zaps.jpg.asset.json";
-import claude101 from "@/assets/Clauded_101.jpg.asset.json";
-import coursera from "@/assets/Coursera.jpg.asset.json";
-import hubspot from "@/assets/Hubspot_Service_Hub_Software_Certified.png.asset.json";
-import make from "@/assets/Make.jpg.asset.json";
+
+const CALENDLY_URL =
+  "https://calendly.com/arnold-ortua-antonio/30min?hide_gdpr_banner=1&embed=true&background_color=020d18&text_color=e8f1ff&primary_color=3ec9ff";
+
+const PUBLIC_IMAGES = {
+  n8n1: "/certification/n8n-first-workflows.jpg",
+  n8n2: "/certification/n8n-api-connected.jpg",
+  n8n3: "/certification/n8n-ai-testing.jpg",
+  n8nLvl2: "/certification/4.n8n Level 2Cert.png",
+  zapAgents: "/certification/zap-ai-agents.jpg",
+  zapZaps: "/certification/zap-intermediate-zaps.jpg",
+  claude101: "/certification/claude-101.jpg",
+  coursera: "/certification/coursera-deepseek-n8n.jpg",
+  make: "/certification/make-academy.jpg",
+};
 
 const CERTS = [
   {
-    image: n8n1.url,
+    image: PUBLIC_IMAGES.n8n1,
     name: "Essentials: Your First Workflows",
     org: "n8n Academy",
     date: "June 22, 2026",
@@ -30,7 +35,7 @@ const CERTS = [
     skills: ["n8n fundamentals", "Triggers & nodes", "Workflow logic", "Testing runs"],
   },
   {
-    image: n8n2.url,
+    image: PUBLIC_IMAGES.n8n2,
     name: "Integrations: APIs & Connected Workflows",
     org: "n8n Academy",
     date: "June 27, 2026",
@@ -40,7 +45,7 @@ const CERTS = [
     skills: ["REST APIs", "Webhooks", "Auth & credentials", "Data mapping"],
   },
   {
-    image: n8n3.url,
+    image: PUBLIC_IMAGES.n8n3,
     name: "In Practice: AI, Testing & Best Practices",
     org: "n8n Academy",
     date: "June 25, 2026",
@@ -50,7 +55,7 @@ const CERTS = [
     skills: ["AI nodes", "Error handling", "Testing", "Best practices"],
   },
   {
-    image: n8nLvl2.url,
+    image: PUBLIC_IMAGES.n8nLvl2,
     name: "Completed n8n Course Level 2",
     org: "n8n (Badge)",
     date: "Granted May 24",
@@ -66,7 +71,7 @@ const CERTS = [
     ],
   },
   {
-    image: zapAgents.url,
+    image: PUBLIC_IMAGES.zapAgents,
     name: "Building AI Agents",
     org: "Zapier Academy",
     date: "May 26, 2026 · ID FB884A41",
@@ -76,7 +81,7 @@ const CERTS = [
     skills: ["AI agents", "Tool calling", "Agent guardrails", "Zapier automation"],
   },
   {
-    image: zapZaps.url,
+    image: PUBLIC_IMAGES.zapZaps,
     name: "Building Intermediate Zaps",
     org: "Zapier Academy",
     date: "May 25, 2026 · ID DE426CCD",
@@ -86,7 +91,7 @@ const CERTS = [
     skills: ["Multi-step Zaps", "Paths & filters", "Formatter", "Error recovery"],
   },
   {
-    image: claude101.url,
+    image: PUBLIC_IMAGES.claude101,
     name: "Claude 101",
     org: "Anthropic",
     date: "Issued April 26, 2026",
@@ -96,7 +101,7 @@ const CERTS = [
     skills: ["Prompt engineering", "Context design", "LLM workflows"],
   },
   {
-    image: coursera.url,
+    image: PUBLIC_IMAGES.coursera,
     name: "Build Intelligent Agents Using DeepSeek & N8N",
     org: "Board Infinity · Coursera",
     date: "Feb 1, 2026",
@@ -106,17 +111,7 @@ const CERTS = [
     skills: ["DeepSeek", "Agent orchestration", "n8n", "Automation design"],
   },
   {
-    image: hubspot.url,
-    name: "Service Hub Software Certified",
-    org: "HubSpot Academy",
-    date: "Valid Jan 18, 2026 – Feb 17, 2027",
-    year: "2026",
-    summary:
-      "Certified in HubSpot Service Hub concepts and best practices for improving the customer experience.",
-    skills: ["Service Hub", "Ticketing & pipelines", "Customer experience", "CRM hygiene"],
-  },
-  {
-    image: make.url,
+    image: PUBLIC_IMAGES.make,
     name: "AI Automation Explorer",
     org: "Make Academy",
     date: "Issued Mar 02, 2026",
@@ -133,10 +128,7 @@ export function Certifications() {
   const [active, setActive] = useState<Cert | null>(null);
 
   return (
-    <section
-      id="certifications"
-      className="relative border-t border-white/5 py-24 lg:py-32"
-    >
+    <section id="certifications" className="relative border-t border-white/5 py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <SectionHeading
           eyebrow="Credentials"
@@ -173,20 +165,20 @@ export function Certifications() {
       </div>
 
       <Dialog open={!!active} onOpenChange={(o) => !o && setActive(null)}>
-        <DialogContent className="max-h-[90vh] max-w-3xl overflow-y-auto border-white/10 bg-black/95 backdrop-blur-2xl">
+        <DialogContent className="max-h-[90vh] max-w-3xl overflow-y-auto border border-border bg-background/95 backdrop-blur-2xl">
           {active ? (
             <>
               <DialogHeader>
                 <p className="text-[11px] uppercase tracking-[0.28em] text-champagne/80">
                   {active.org}
                 </p>
-                <DialogTitle className="text-2xl text-white">{active.name}</DialogTitle>
-                <DialogDescription className="text-neutral-400">
+                <DialogTitle className="text-2xl text-foreground">{active.name}</DialogTitle>
+                <DialogDescription className="text-muted-foreground">
                   {active.summary}
                 </DialogDescription>
               </DialogHeader>
 
-              <div className="overflow-hidden rounded-2xl border border-white/10 bg-black">
+              <div className="overflow-hidden rounded-2xl border border-border bg-background">
                 <img
                   src={active.image}
                   alt={`${active.name} certificate issued by ${active.org}`}
@@ -194,22 +186,22 @@ export function Certifications() {
                 />
               </div>
 
-              <div className="rounded-xl border border-white/10 bg-black/40 p-4">
-                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-neutral-500">
+              <div className="rounded-xl border border-border bg-muted/80 p-4">
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
                   Issued
                 </p>
-                <p className="mt-2 text-sm text-neutral-300">{active.date}</p>
+                <p className="mt-2 text-sm text-foreground">{active.date}</p>
               </div>
 
               <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-neutral-500">
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
                   Skills covered
                 </p>
                 <div className="mt-3 flex flex-wrap gap-2">
                   {active.skills.map((s) => (
                     <span
                       key={s}
-                      className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-neutral-300"
+                      className="rounded-full border border-border bg-muted px-3 py-1 text-xs text-foreground"
                     >
                       {s}
                     </span>
@@ -224,52 +216,6 @@ export function Certifications() {
   );
 }
 
-const REVIEWS = [
-  {
-    quote:
-      "Arnold rebuilt our GoHighLevel pipeline and the follow-up gap disappeared. Every lead gets touched within minutes now.",
-    name: "M. Reyes",
-    role: "Agency Owner",
-  },
-  {
-    quote:
-      "The Messenger agent handles the questions my team used to answer 40 times a day. Documentation was flawless.",
-    name: "J. Cruz",
-    role: "E-commerce Founder",
-  },
-  {
-    quote:
-      "He connected HubSpot, Sheets and Gmail into one flow. No more copy-paste, and the reporting finally makes sense.",
-    name: "S. Delgado",
-    role: "Operations Manager",
-  },
-];
-
-export function Reviews() {
-  return (
-    <section id="reviews" className="relative border-t border-white/5 py-24 lg:py-32">
-      <div className="mx-auto max-w-7xl px-5 lg:px-8">
-        <SectionHeading eyebrow="Reviews" title="What clients say" />
-        <div className="mt-14 grid gap-4 md:grid-cols-3">
-          {REVIEWS.map((r, i) => (
-            <Reveal key={r.name} delay={i * 80}>
-              <figure className="flex h-full flex-col justify-between rounded-2xl border border-white/10 bg-white/[0.03] p-8 transition-all duration-500 hover:border-white/25">
-                <blockquote className="text-sm leading-relaxed text-neutral-300">
-                  “{r.quote}”
-                </blockquote>
-                <figcaption className="mt-8">
-                  <p className="text-sm font-semibold text-white">{r.name}</p>
-                  <p className="text-xs text-neutral-500">{r.role}</p>
-                </figcaption>
-              </figure>
-            </Reveal>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
 export function Contact() {
   return (
     <section id="contact" className="relative border-t border-white/5 py-24 lg:py-32">
@@ -277,35 +223,35 @@ export function Contact() {
         aria-hidden
         className="animate-aurora pointer-events-none absolute left-1/2 top-1/2 h-[30rem] w-[30rem] -translate-x-1/2 -translate-y-1/2 rounded-full blur-[110px]"
         style={{
-          background:
-            "radial-gradient(circle, rgba(214,190,140,0.10) 0%, transparent 70%)",
+          background: "radial-gradient(circle, rgba(214,190,140,0.10) 0%, transparent 70%)",
         }}
       />
-      <div className="relative mx-auto max-w-3xl px-5 text-center lg:px-8">
+      <div className="relative mx-auto max-w-4xl px-5 lg:px-8">
         <Reveal>
-          <p className="text-[11px] font-medium uppercase tracking-[0.35em] text-champagne/80">
-            Contact
-          </p>
-          <h2 className="mt-4 text-3xl font-semibold tracking-tight text-gradient-silver sm:text-5xl">
-            Let's automate the work you shouldn't be doing.
-          </h2>
-          <p className="mx-auto mt-5 max-w-xl text-sm leading-relaxed text-neutral-400">
-            Book a focused 30-minute discovery call. We'll map your process, find the
-            bottlenecks, and agree on what a win looks like.
-          </p>
-          <div className="mt-10 flex flex-wrap justify-center gap-3">
-            <a
-              href="mailto:hello@aoaautomation.com"
-              className="rounded-full bg-white px-8 py-3 text-sm font-semibold text-black transition-transform duration-300 hover:scale-[1.03]"
-            >
-              Book a Call
-            </a>
-            <a
-              href="mailto:hello@aoaautomation.com"
-              className="rounded-full border border-white/15 px-8 py-3 text-sm font-medium text-neutral-200 transition-colors duration-300 hover:border-white/40 hover:text-white"
-            >
-              hello@aoaautomation.com
-            </a>
+          <div className="text-center">
+            <p className="text-[11px] font-medium uppercase tracking-[0.35em] text-champagne/80">
+              Contact
+            </p>
+            <h2 className="mt-4 text-3xl font-semibold tracking-tight text-gradient-silver sm:text-5xl">
+              Let's automate the work you shouldn't be doing.
+            </h2>
+            <p className="mx-auto mt-5 max-w-xl text-sm leading-relaxed text-neutral-400">
+              Ready to streamline your operations? Let's map your process, find the bottlenecks, and
+              author a system that removes the repetitive work.
+            </p>
+          </div>
+
+          <div className="mt-12 overflow-hidden rounded-[1.75rem] border border-white/10 bg-[#030d1d] shadow-[0_22px_60px_rgba(2,6,23,0.45)]">
+            <iframe
+              src={CALENDLY_URL}
+              title="Book a call with Arnold"
+              className="h-[760px] w-full border-0 bg-[#030d1d]"
+              loading="lazy"
+              allow="clipboard-write"
+              scrolling="no"
+              frameBorder="0"
+              style={{ backgroundColor: "#030d1d" }}
+            />
           </div>
         </Reveal>
       </div>
@@ -320,9 +266,7 @@ export function SiteFooter() {
         <p className="min-w-0 truncate text-xs text-neutral-500">
           © {new Date().getFullYear()} AOA Automation Hub — Arnold Antonio
         </p>
-        <p className="shrink-0 text-xs text-neutral-600">
-          AI Automation & GHL Specialist
-        </p>
+        <p className="shrink-0 text-xs text-neutral-600">AI Automation & GHL Specialist</p>
       </div>
     </footer>
   );

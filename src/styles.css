@@ -82,12 +82,7 @@
 }
 
 @utility text-gradient-silver {
-  background-image: linear-gradient(
-    180deg,
-    #ffffff 0%,
-    #d4d4d4 55%,
-    #8a8a8a 100%
-  );
+  background-image: linear-gradient(180deg, #ffffff 0%, #d4d4d4 55%, #8a8a8a 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;

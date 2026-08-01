@@ -46,20 +46,32 @@ export function Process() {
   );
 }
 
+const BrandIcon = ({ children, bg, ring }: { children: React.ReactNode; bg: string; ring?: string }) => (
+  <span
+    className="flex h-6 w-6 items-center justify-center rounded-md text-[10px] font-bold text-white shadow-sm"
+    style={{
+      background: bg,
+      boxShadow: ring ? `0 0 0 1px ${ring}` : undefined,
+    }}
+  >
+    {children}
+  </span>
+);
+
 const TECH = [
-  "n8n",
-  "Zapier",
-  "Make",
-  "GoHighLevel",
-  "Claude",
-  "OpenAI",
-  "Google Gemini",
-  "REST APIs",
-  "Google Workspace",
-  "Airtable",
-  "Slack",
-  "Webhooks",
-  "ElevenLabs",
+  { name: "n8n", icon: <BrandIcon bg="linear-gradient(135deg, #ff5b6d, #ff8a5b)">n</BrandIcon> },
+  { name: "Zapier", icon: <BrandIcon bg="linear-gradient(135deg, #ff6a3d, #ff8f5a)">Z</BrandIcon> },
+  { name: "Make", icon: <BrandIcon bg="linear-gradient(135deg, #ff6b8a, #ff9d6c)">M</BrandIcon> },
+  { name: "GoHighLevel", icon: <BrandIcon bg="linear-gradient(135deg, #5b6cff, #4bd4ff)">G</BrandIcon> },
+  { name: "Claude", icon: <BrandIcon bg="linear-gradient(135deg, #f59e0b, #f97316)">C</BrandIcon> },
+  { name: "OpenAI", icon: <BrandIcon bg="linear-gradient(135deg, #0f172a, #111827)">O</BrandIcon> },
+  { name: "Google Gemini", icon: <BrandIcon bg="linear-gradient(135deg, #3b82f6, #8b5cf6)">✦</BrandIcon> },
+  { name: "REST APIs", icon: <BrandIcon bg="linear-gradient(135deg, #475569, #0f172a)">API</BrandIcon> },
+  { name: "Google Workspace", icon: <BrandIcon bg="linear-gradient(135deg, #10b981, #3b82f6)">G</BrandIcon> },
+  { name: "Airtable", icon: <BrandIcon bg="linear-gradient(135deg, #f97316, #fbbf24)">A</BrandIcon> },
+  { name: "Slack", icon: <BrandIcon bg="linear-gradient(135deg, #4a154b, #611f69)">S</BrandIcon> },
+  { name: "Webhooks", icon: <BrandIcon bg="linear-gradient(135deg, #0ea5e9, #22c55e)">⇄</BrandIcon> },
+  { name: "ElevenLabs", icon: <BrandIcon bg="linear-gradient(135deg, #8b5cf6, #ec4899)">E</BrandIcon> },
 ];
 
 export function TechStack() {
@@ -78,10 +90,11 @@ export function TechStack() {
         <div className="animate-marquee flex w-max gap-3">
           {row.map((t, i) => (
             <span
-              key={`${t}-${i}`}
-              className="whitespace-nowrap rounded-full border border-white/10 bg-white/[0.03] px-6 py-3 text-sm font-medium text-neutral-500 transition-colors duration-300 hover:border-champagne/50 hover:text-white"
+              key={`${t.name}-${i}`}
+              className="inline-flex items-center gap-2 whitespace-nowrap rounded-full border border-white/10 bg-white/[0.03] px-3 py-2 text-sm font-medium text-neutral-300 transition-colors duration-300 hover:border-champagne/50 hover:text-white"
             >
-              {t}
+              {t.icon}
+              {t.name}
             </span>
           ))}
         </div>
@@ -133,28 +146,22 @@ export function Services() {
           subtitle="I design and build custom automation systems that connect your entire tech stack, eliminate repetitive manual work, and create seamless workflows that improve efficiency, accuracy, and scalability."
         />
 
-        <div className="mt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-14 grid items-stretch gap-4 md:grid-cols-2 lg:grid-cols-3">
           {SERVICES.map((s, i) => (
-            <Reveal
-              key={s.title}
-              delay={i * 70}
-              className={s.wide ? "lg:col-span-2" : ""}
-            >
-              <div className="group relative h-full overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] p-8 transition-all duration-500 hover:border-white/25">
+            <Reveal key={s.title} delay={i * 70} className={s.wide ? "lg:col-span-2" : ""}>
+              <div className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] p-5 transition-all duration-500 hover:border-white/25 sm:p-6">
                 <div
                   aria-hidden
-                  className="pointer-events-none absolute -right-16 -top-16 h-40 w-40 rounded-full bg-white/5 opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-100"
+                  className="pointer-events-none absolute -right-16 -top-16 h-32 w-32 rounded-full bg-white/5 opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-100"
                 />
-                <h3 className="text-lg font-semibold text-white">{s.title}</h3>
-                <p className="mt-3 max-w-lg text-sm leading-relaxed text-neutral-400">
-                  {s.body}
-                </p>
+                <h3 className="text-[1.2rem] font-semibold leading-tight text-white">{s.title}</h3>
+                <p className="mt-3 max-w-lg text-[0.96rem] leading-relaxed text-neutral-400">{s.body}</p>
                 {s.bullets ? (
-                  <ul className="mt-6 flex flex-wrap gap-2">
+                  <ul className="mt-5 flex flex-wrap gap-2">
                     {s.bullets.map((b) => (
                       <li
                         key={b}
-                        className="rounded-full border border-white/10 px-3.5 py-1.5 text-xs text-neutral-300"
+                        className="rounded-full border border-white/10 px-3 py-1.5 text-[0.72rem] text-neutral-300"
                       >
                         {b}
                       </li>
@@ -190,7 +197,7 @@ const TIMELINE = [
     body: "High-volume data accuracy and process documentation.",
   },
   {
-    period: "Dec 2008 – Dec 2010",
+    period: "2008-2010",
     role: "Data Entry Specialist",
     org: "GE Marketing — Sto. Niño, Caloocan City",
     body: "Records management and reporting support.",
@@ -201,23 +208,16 @@ export function Experience() {
   return (
     <section id="about" className="relative border-t border-white/5 py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
-        <SectionHeading
-          eyebrow="Experience"
-          title="A 14+ year paper trail of clean data."
-        />
-        <div className="mt-14 border-l border-white/10 pl-6 sm:pl-10">
+        <SectionHeading eyebrow="Experience" title="A 14+ year paper trail of clean data." />
+        <div className="mt-14 space-y-10 border-l border-white/10 pl-6 sm:pl-10">
           {TIMELINE.map((t, i) => (
             <Reveal key={t.period} delay={i * 80}>
-              <div className="relative pb-12 last:pb-0">
+              <div className="relative pt-1">
                 <span className="absolute -left-[1.85rem] top-2 h-2 w-2 rounded-full bg-champagne sm:-left-[2.85rem]" />
-                <p className="text-xs uppercase tracking-[0.2em] text-neutral-500">
-                  {t.period}
-                </p>
-                <h3 className="mt-2 text-xl font-semibold text-white">{t.role}</h3>
-                <p className="mt-1 text-sm text-neutral-300">{t.org}</p>
-                <p className="mt-2 max-w-2xl text-sm leading-relaxed text-neutral-500">
-                  {t.body}
-                </p>
+                <p className="text-xs uppercase tracking-[0.2em] text-neutral-500">{t.period}</p>
+                <h3 className="mt-4 text-xl font-semibold text-white">{t.role}</h3>
+                <p className="mt-2 text-sm text-neutral-300">{t.org}</p>
+                <p className="mt-4 max-w-2xl text-sm leading-relaxed text-neutral-500">{t.body}</p>
               </div>
             </Reveal>
           ))}

@@ -1,14 +1,9 @@
 import { useEffect, useState } from "react";
-import arnold from "@/assets/arnold.png.asset.json";
 
-const LINES = [
-  "Automate workflows.",
-  "Build scalable systems.",
-  "Save valuable time.",
-];
+const LINES = ["Automate workflows.", "Build scalable systems.", "Save valuable time."];
 
-const CV_URL =
-  "https://drive.google.com/file/d/1pcWn5u1LQXFCFXW_2WOTPgHLO7N4GmfH/view?usp=sharing";
+const CALENDLY_URL = "https://calendly.com/arnold-ortua-antonio/30min?back=1&month=2026-07";
+const CV_URL = "https://drive.google.com/file/d/1pcWn5u1LQXFCFXW_2WOTPgHLO7N4GmfH/view?usp=sharing";
 
 export function Hero() {
   const [i, setI] = useState(0);
@@ -47,9 +42,7 @@ export function Hero() {
                 <span
                   key={line}
                   className={`block transition-all duration-700 ${
-                    idx === i
-                      ? "text-white opacity-100"
-                      : "text-neutral-600 opacity-40"
+                    idx === i ? "text-white opacity-100" : "text-neutral-600 opacity-40"
                   }`}
                 >
                   {line}
@@ -59,9 +52,8 @@ export function Hero() {
           </h1>
 
           <p className="mt-8 max-w-xl text-sm leading-relaxed text-neutral-400 sm:text-base">
-            I design intelligent automations and AI-powered workflows that eliminate
-            repetitive tasks, streamline operations, and help businesses focus on growth
-            and high-impact work.
+            I design intelligent automations and AI-powered workflows that eliminate repetitive
+            tasks, streamline operations, and help businesses focus on growth and high-impact work.
           </p>
 
           <div className="mt-10 flex flex-wrap gap-3">
@@ -95,7 +87,7 @@ export function Hero() {
           />
           <div className="relative overflow-hidden rounded-[1.75rem] border border-white/10 bg-neutral-900">
             <img
-              src={arnold.url}
+              src="/picsko.png"
               alt="Arnold Antonio, AI automation and GoHighLevel specialist"
               className="h-full w-full object-cover grayscale contrast-110 transition-all duration-700 hover:grayscale-0"
               loading="eager"

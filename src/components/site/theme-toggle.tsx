@@ -34,19 +34,18 @@ export function ThemeToggle() {
       type="button"
       onClick={toggle}
       aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
-      className="relative grid h-10 w-10 shrink-0 place-items-center overflow-hidden rounded-full border border-white/12 bg-white/5 transition-colors duration-300 hover:border-champagne/50"
+      className="relative grid h-10 w-10 shrink-0 place-items-center overflow-hidden rounded-full border border-white/12 bg-transparent transition-colors duration-300 hover:border-champagne/50"
     >
       <span
         className="absolute inset-0 opacity-0 transition-opacity duration-500"
         style={{
-          background:
-            "radial-gradient(circle at 50% 50%, rgba(214,190,140,0.25), transparent 70%)",
+          background: "radial-gradient(circle at 50% 50%, rgba(214,190,140,0.25), transparent 70%)",
           opacity: isDark ? 0 : 1,
         }}
       />
       <svg
         viewBox="0 0 24 24"
-        className="relative h-[18px] w-[18px] text-white transition-transform duration-700"
+        className="relative h-[18px] w-[18px] text-current transition-transform duration-700"
         style={{ transform: isDark ? "rotate(0deg)" : "rotate(180deg)" }}
         fill="none"
         stroke="currentColor"
@@ -76,18 +75,10 @@ export function ThemeToggle() {
         >
           <circle cx="12" cy="12" r="4.4" />
           {[0, 45, 90, 135, 180, 225, 270, 315].map((deg) => (
-            <line
-              key={deg}
-              x1="12"
-              y1="1.8"
-              x2="12"
-              y2="4.2"
-              transform={`rotate(${deg} 12 12)`}
-            />
+            <line key={deg} x1="12" y1="1.8" x2="12" y2="4.2" transform={`rotate(${deg} 12 12)`} />
           ))}
         </g>
       </svg>
-
     </button>
   );
 }

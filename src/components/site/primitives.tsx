@@ -60,9 +60,7 @@ export function SectionHeading({
         {title}
       </h2>
       {subtitle ? (
-        <p className="mt-5 text-sm leading-relaxed text-neutral-400 sm:text-base">
-          {subtitle}
-        </p>
+        <p className="mt-5 text-sm leading-relaxed text-neutral-400 sm:text-base">{subtitle}</p>
       ) : null}
     </Reveal>
   );

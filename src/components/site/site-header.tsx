@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { ThemeToggle } from "./theme-toggle";
 
+const CALENDLY_URL = "https://calendly.com/arnold-ortua-antonio/30min?back=1&month=2026-07";
+
 const LINKS = [
   ["Process", "#process"],
   ["Services", "#services"],

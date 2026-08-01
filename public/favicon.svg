@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="AOA Automation">
+  <rect width="64" height="64" rx="16" fill="#090909"/>
+  <rect x="8" y="8" width="48" height="48" rx="12" fill="none" stroke="rgba(255,255,255,0.18)"/>
+  <path d="M20 42V22h8.7c7.3 0 11.9 4.2 11.9 10.2S35.9 42 28.7 42H20zm8.5-6.7h2.8c3.2 0 5.1-1.6 5.1-4.2 0-2.7-1.9-4.2-5.1-4.2h-2.8v8.4z" fill="#ffffff"/>
+  <path d="M42 22h-6v20h6V22z" fill="#d9c188" opacity="0.95"/>
+</svg>

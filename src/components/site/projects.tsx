@@ -7,14 +7,17 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import messenger from "@/assets/messenger-agent.png.asset.json";
-import leadCapture from "@/assets/lead-capture.png.asset.json";
-import crossSystem from "@/assets/cross-system.png.asset.json";
-import rag from "@/assets/rag.png.asset.json";
+
+const PUBLIC_IMAGES = {
+  messenger: "/Facebook%20Messenger%20AI%20Agent.png",
+  leadCapture: "/Lead%20Capture%20%E2%86%92%20AI%20Qualification%20%E2%86%92%20GoHighLevel.png",
+  crossSystem: "/Cross-System%20Intelligence.png",
+  rag: "/RAGForge%20Knowledge%20Automation.png",
+};
 
 const PROJECTS = [
   {
-    image: messenger.url,
+    image: PUBLIC_IMAGES.messenger,
     title: "Facebook Messenger AI Agent",
     tag: "Gemini + Google Docs + Memory",
     intro:
@@ -34,7 +37,7 @@ const PROJECTS = [
     ],
   },
   {
-    image: leadCapture.url,
+    image: PUBLIC_IMAGES.leadCapture,
     title: "Lead Capture → AI Qualification → GoHighLevel",
     tag: "n8n + OpenRouter + GHL",
     intro:
@@ -55,7 +58,7 @@ const PROJECTS = [
     ],
   },
   {
-    image: crossSystem.url,
+    image: PUBLIC_IMAGES.crossSystem,
     title: "Cross-System Intelligence",
     tag: "HubSpot + Sheets + OpenAI + Gmail",
     intro:
@@ -76,7 +79,7 @@ const PROJECTS = [
     ],
   },
   {
-    image: rag.url,
+    image: PUBLIC_IMAGES.rag,
     title: "RAGForge Knowledge Automation",
     tag: "Supabase Vector + Embeddings + Drive",
     intro:
@@ -140,17 +143,13 @@ export function Projects() {
                   <h3 className="mt-3 text-2xl font-semibold tracking-tight text-white">
                     {p.title}
                   </h3>
-                  <p className="mt-4 text-sm leading-relaxed text-neutral-400">
-                    {p.intro}
-                  </p>
+                  <p className="mt-4 text-sm leading-relaxed text-neutral-400">{p.intro}</p>
 
                   <div className="mt-6 rounded-xl border border-white/10 bg-black/40 p-4">
                     <p className="text-xs font-semibold uppercase tracking-[0.2em] text-neutral-500">
                       Problem it solves
                     </p>
-                    <p className="mt-2 text-sm leading-relaxed text-neutral-400">
-                      {p.problem}
-                    </p>
+                    <p className="mt-2 text-sm leading-relaxed text-neutral-400">{p.problem}</p>
                   </div>
 
                   <div className="mt-6 grid gap-6 sm:grid-cols-2">
@@ -203,20 +202,20 @@ export function Projects() {
       </div>
 
       <Dialog open={!!active} onOpenChange={(o) => !o && setActive(null)}>
-        <DialogContent className="max-h-[90vh] max-w-5xl overflow-y-auto border-white/10 bg-black/95 backdrop-blur-2xl">
+        <DialogContent className="max-h-[90vh] max-w-5xl overflow-y-auto border border-border bg-background/95 backdrop-blur-2xl">
           {active ? (
             <>
               <DialogHeader>
                 <p className="text-[11px] uppercase tracking-[0.28em] text-champagne/80">
                   {active.tag}
                 </p>
-                <DialogTitle className="text-2xl text-white">{active.title}</DialogTitle>
-                <DialogDescription className="text-neutral-400">
+                <DialogTitle className="text-2xl text-foreground">{active.title}</DialogTitle>
+                <DialogDescription className="text-muted-foreground">
                   {active.intro}
                 </DialogDescription>
               </DialogHeader>
 
-              <div className="overflow-hidden rounded-2xl border border-white/10 bg-black">
+              <div className="overflow-hidden rounded-2xl border border-border bg-background">
                 <img
                   src={active.image}
                   alt={`${active.title} automation workflow full view`}
@@ -224,26 +223,21 @@ export function Projects() {
                 />
               </div>
 
-              <div className="rounded-xl border border-white/10 bg-black/40 p-4">
-                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-neutral-500">
+              <div className="rounded-xl border border-border bg-muted/80 p-4">
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
                   Problem it solves
                 </p>
-                <p className="mt-2 text-sm leading-relaxed text-neutral-400">
-                  {active.problem}
-                </p>
+                <p className="mt-2 text-sm leading-relaxed text-foreground">{active.problem}</p>
               </div>
 
               <div className="grid gap-6 sm:grid-cols-2">
                 <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-neutral-500">
+                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
                     How it works
                   </p>
                   <ul className="mt-3 space-y-2">
                     {active.how.map((h) => (
-                      <li
-                        key={h}
-                        className="flex gap-2 text-sm leading-relaxed text-neutral-400"
-                      >
+                      <li key={h} className="flex gap-2 text-sm leading-relaxed text-foreground">
                         <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-neutral-600" />
                         {h}
                       </li>
@@ -251,15 +245,12 @@ export function Projects() {
                   </ul>
                 </div>
                 <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-neutral-500">
+                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
                     Results
                   </p>
                   <ul className="mt-3 space-y-2">
                     {active.results.map((r) => (
-                      <li
-                        key={r}
-                        className="flex gap-2 text-sm leading-relaxed text-neutral-300"
-                      >
+                      <li key={r} className="flex gap-2 text-sm leading-relaxed text-foreground">
                         <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-champagne" />
                         {r}
                       </li>

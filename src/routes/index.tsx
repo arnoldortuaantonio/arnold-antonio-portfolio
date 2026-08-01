@@ -4,12 +4,7 @@ import { SiteHeader } from "@/components/site/site-header";
 import { Hero } from "@/components/site/hero";
 import { Process, TechStack, Services, Experience } from "@/components/site/sections";
 import { Projects } from "@/components/site/projects";
-import {
-  Certifications,
-  Reviews,
-  Contact,
-  SiteFooter,
-} from "@/components/site/extras";
+import { Certifications, Contact, SiteFooter } from "@/components/site/extras";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -49,7 +44,6 @@ function Index() {
         <Experience />
         <Projects />
         <Certifications />
-        <Reviews />
         <Contact />
       </main>
       <SiteFooter />
