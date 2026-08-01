@@ -46,32 +46,29 @@ export function Process() {
   );
 }
 
-const BrandIcon = ({ children, bg, ring }: { children: React.ReactNode; bg: string; ring?: string }) => (
-  <span
-    className="flex h-6 w-6 items-center justify-center rounded-md text-[10px] font-bold text-white shadow-sm"
-    style={{
-      background: bg,
-      boxShadow: ring ? `0 0 0 1px ${ring}` : undefined,
-    }}
-  >
-    {children}
-  </span>
+const BrandIcon = ({ src, alt }: { src: string; alt: string }) => (
+  <img
+    src={src}
+    alt={alt}
+    className="h-6 w-6 rounded-md object-contain bg-transparent"
+    loading="lazy"
+  />
 );
 
 const TECH = [
-  { name: "n8n", icon: <BrandIcon bg="linear-gradient(135deg, #ff5b6d, #ff8a5b)">n</BrandIcon> },
-  { name: "Zapier", icon: <BrandIcon bg="linear-gradient(135deg, #ff6a3d, #ff8f5a)">Z</BrandIcon> },
-  { name: "Make", icon: <BrandIcon bg="linear-gradient(135deg, #ff6b8a, #ff9d6c)">M</BrandIcon> },
-  { name: "GoHighLevel", icon: <BrandIcon bg="linear-gradient(135deg, #5b6cff, #4bd4ff)">G</BrandIcon> },
-  { name: "Claude", icon: <BrandIcon bg="linear-gradient(135deg, #f59e0b, #f97316)">C</BrandIcon> },
-  { name: "OpenAI", icon: <BrandIcon bg="linear-gradient(135deg, #0f172a, #111827)">O</BrandIcon> },
-  { name: "Google Gemini", icon: <BrandIcon bg="linear-gradient(135deg, #3b82f6, #8b5cf6)">✦</BrandIcon> },
-  { name: "REST APIs", icon: <BrandIcon bg="linear-gradient(135deg, #475569, #0f172a)">API</BrandIcon> },
-  { name: "Google Workspace", icon: <BrandIcon bg="linear-gradient(135deg, #10b981, #3b82f6)">G</BrandIcon> },
-  { name: "Airtable", icon: <BrandIcon bg="linear-gradient(135deg, #f97316, #fbbf24)">A</BrandIcon> },
-  { name: "Slack", icon: <BrandIcon bg="linear-gradient(135deg, #4a154b, #611f69)">S</BrandIcon> },
-  { name: "Webhooks", icon: <BrandIcon bg="linear-gradient(135deg, #0ea5e9, #22c55e)">⇄</BrandIcon> },
-  { name: "ElevenLabs", icon: <BrandIcon bg="linear-gradient(135deg, #8b5cf6, #ec4899)">E</BrandIcon> },
+  { name: "n8n", icon: <BrandIcon src="/icon/n8n.svg" alt="n8n" /> },
+  { name: "Zapier", icon: <BrandIcon src="/icon/zapier.png" alt="Zapier" /> },
+  { name: "Make", icon: <BrandIcon src="/icon/Make.png" alt="Make" /> },
+  { name: "GoHighLevel", icon: <BrandIcon src="/icon/Gohighlevel.jpeg" alt="GoHighLevel" /> },
+  { name: "Claude", icon: <BrandIcon src="/icon/Claude_Symbol_1.png" alt="Claude" /> },
+  { name: "OpenAI", icon: <BrandIcon src="/icon/OpenAI.png" alt="OpenAI" /> },
+  { name: "Google Gemini", icon: <BrandIcon src="/icon/gemini.webp" alt="Google Gemini" /> },
+  { name: "REST APIs", icon: <BrandIcon src="/icon/rest%20api.png" alt="REST APIs" /> },
+  { name: "Google Workspace", icon: <BrandIcon src="/icon/google%20workspace.png" alt="Google Workspace" /> },
+  { name: "Airtable", icon: <BrandIcon src="/icon/Airtable.svg" alt="Airtable" /> },
+  { name: "Slack", icon: <BrandIcon src="/icon/Slack.png" alt="Slack" /> },
+  { name: "Webhooks", icon: <BrandIcon src="/icon/webhook.svg" alt="Webhooks" /> },
+  { name: "ElevenLabs", icon: <BrandIcon src="/icon/elevenlabs.svg" alt="ElevenLabs" /> },
 ];
 
 export function TechStack() {
