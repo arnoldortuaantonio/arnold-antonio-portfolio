@@ -68,7 +68,7 @@ const TECH = [
   { name: "Airtable", icon: <BrandIcon src="/icon/Airtable.svg" alt="Airtable" /> },
   { name: "Slack", icon: <BrandIcon src="/icon/Slack.png" alt="Slack" /> },
   { name: "Webhooks", icon: <BrandIcon src="/icon/webhook.svg" alt="Webhooks" /> },
-  { name: "ElevenLabs", icon: <BrandIcon src="/icon/elevenlabs.svg" alt="ElevenLabs" /> },
+  { name: "ElevenLabs", icon: <BrandIcon src="/icon/ELevenlabs.png" alt="ElevenLabs" /> },
 ];
 
 export function TechStack() {

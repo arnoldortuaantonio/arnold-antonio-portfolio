@@ -2,11 +2,11 @@
 
 A premium portfolio and personal brand website for Arnold Antonio, an AI Automation Specialist and GoHighLevel expert helping businesses streamline operations, improve lead conversion, and deploy AI-powered systems that save time at scale.
 
-This project is a luxury-tech portfolio experience with a dark, high-end visual direction, automation-focused messaging, and strong conversion CTAs. It showcases services, case studies, certifications, and a booking flow designed to turn visitors into qualified leads.
+This project is a luxury-tech portfolio experience with a dark, high-end visual direction, automation-focused messaging, and strong conversion CTAs. It showcases services, certifications, and a booking flow designed to turn visitors into qualified leads.
 
 ## Overview
 
-Arnold Antonio helps businesses automate repetitive work, improve CRM performance, and connect their tools into reliable, intelligent workflows. This site presents his expertise in:
+Arnold Antonio helps businesses automate repetitive work, improve CRM performance, and connect their tools into reliable, intelligent workflows. The portfolio highlights:
 
 - AI agents and workflow automation
 - GoHighLevel setup and CRM optimization
@@ -15,15 +15,14 @@ Arnold Antonio helps businesses automate repetitive work, improve CRM performanc
 - Knowledge automation and AI-assisted operations
 - Sales funnel and landing page builds
 
-## Highlights
+## Features
 
-- Premium black-and-gold luxury brand aesthetic
+- Premium black-and-gold luxury aesthetic
 - Responsive portfolio layout for desktop and mobile
-- Hero section with strong CTAs and personal branding
+- Strong hero section and conversion-focused CTAs
 - Services and capabilities overview
-- Selected Works / case study experience section
-- Certifications and credentials showcase
-- Embedded Calendly booking experience
+- Case study highlights and certification showcase
+- Embedded booking workflow
 - Light/dark theme support
 - Vercel-ready deployment configuration
 
@@ -34,15 +33,8 @@ Arnold Antonio helps businesses automate repetitive work, improve CRM performanc
 - Vite
 - Tailwind CSS
 - Radix UI components
-- Nitro / Vercel deployment build
+- Nitro / Vercel deployment
 - SQLite database setup support
-
-## Project Goals
-
-- Position Arnold as a credible AI automation specialist and GHL expert
-- Showcase measurable business outcomes from workflow automation work
-- Convert visitors into booked discovery calls
-- Present a polished, premium brand experience aligned with his target market
 
 ## Local Development
 
@@ -60,47 +52,42 @@ npm run build
 
 ## Deployment
 
-This project is configured for Vercel-ready Nitro deployment and includes a GitHub Actions workflow for validation and deployment when the required environment secrets are configured.
+This project is configured for Vercel deployment and includes a GitHub Actions workflow for validation and deployment when the required environment secrets are configured.
+
+### Vercel setup
+
+1. Push this repository to GitHub.
+2. Import the repo into Vercel.
+3. Use the default framework settings from this project.
+4. Add the required environment variables if the app uses them.
+5. Deploy the project from the main branch.
+
+### GitHub Actions
+
+The workflow in `.github/workflows/deploy.yml` validates the project on pushes to `main` and deploys to Vercel when `VERCEL_TOKEN`, `VERCEL_ORG_ID`, and `VERCEL_PROJECT_ID` are set as repository secrets.
 
 ## Repository Notes
 
-This portfolio is built to be portfolio-first, lead-generation-focused, and easy to customize for additional case studies, certifications, and client work in the future.
-
-## Contact / Booking
-
-The website is designed to route leads toward a direct Calendly booking workflow for discovery calls and project inquiries.
+This portfolio is built to be lead-generation focused, portfolio-first, and easy to customize with additional case studies, certifications, and business details.
 
 ## License
 
-This project is for personal portfolio use and business branding purposes.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-- **Accents:** Use minimalist, high-end metallic tones (like subtle silver, white, or a very muted, elegant champagne gold) instead of neon colors.
+## Contact / Booking
 
-- **Typography:** Use a sophisticated, clean sans-serif font (like Inter or Plus Jakarta Sans). Headings should be crisp white (`text-white`), and body text should be a soft, readable silver/grey (`text-neutral-400`).
-
-- **Interactions:** Add smooth fade-in-on-scroll animations using Intersection Observer. Hover effects on cards and buttons should be understated and elegant (e.g., a slight border glow or a smooth scale-up).
-
-- **Responsiveness:** Ensure the layout is 100% fully responsive across mobile, tablet, and desktop views, and make mouse animated base on the website themes.
-
-This project was built with [Lovable](https://lovable.dev).
-
-**Live app**: https://aoa-elite-flow.lovable.app
+The site is designed to route leads toward direct discovery-call booking and project inquiries.
 
 ## Build with Lovable
 
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/52d5f136-e08a-47e9-ab35-313095b2ba6c).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
+This project was originally created with [Lovable](https://lovable.dev).
 
 ## Development
 
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
-
-```sh
-git clone <this-repository-url>
+```bash
+git clone <repository-url>
 cd <repository-name>
-npm i
+npm install
 npm run dev
 ```
+

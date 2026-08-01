@@ -1,6 +1,71 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="AOA Automation">
-  <rect width="64" height="64" rx="16" fill="#090909"/>
-  <rect x="8" y="8" width="48" height="48" rx="12" fill="none" stroke="rgba(255,255,255,0.18)"/>
-  <path d="M20 42V22h8.7c7.3 0 11.9 4.2 11.9 10.2S35.9 42 28.7 42H20zm8.5-6.7h2.8c3.2 0 5.1-1.6 5.1-4.2 0-2.7-1.9-4.2-5.1-4.2h-2.8v8.4z" fill="#ffffff"/>
-  <path d="M42 22h-6v20h6V22z" fill="#d9c188" opacity="0.95"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="AOA favicon">
+  <defs>
+    <linearGradient id="bg" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#050d1f"/>
+      <stop offset="50%" stop-color="#061a38"/>
+      <stop offset="100%" stop-color="#020814"/>
+    </linearGradient>
+    <linearGradient id="ring" x1="0%" x2="100%" y1="0%" y2="0%">
+      <stop offset="0%" stop-color="#1deaff"/>
+      <stop offset="35%" stop-color="#7ad6ff"/>
+      <stop offset="60%" stop-color="#90dfff"/>
+      <stop offset="100%" stop-color="#0a4dff"/>
+    </linearGradient>
+    <linearGradient id="textFill" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#f3f8ff"/>
+      <stop offset="25%" stop-color="#ecf5ff"/>
+      <stop offset="58%" stop-color="#dfeefd"/>
+      <stop offset="100%" stop-color="#9ccaf7"/>
+    </linearGradient>
+    <linearGradient id="blueEdge" x1="0%" x2="100%" y1="0%" y2="0%">
+      <stop offset="0%" stop-color="#49d3ff"/>
+      <stop offset="100%" stop-color="#0d5ee8"/>
+    </linearGradient>
+    <radialGradient id="spark" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="30%" stop-color="#dff7ff"/>
+      <stop offset="100%" stop-color="#8ad8ff"/>
+    </radialGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="256" height="256" rx="58" fill="url(#bg)"/>
+  <rect x="16" y="16" width="224" height="224" rx="42" fill="none" stroke="rgba(255,255,255,0.12)"/>
+
+  <g opacity="0.7">
+    <circle cx="55" cy="42" r="2.2" fill="url(#spark)"/>
+    <circle cx="90" cy="28" r="1.7" fill="url(#spark)"/>
+    <circle cx="158" cy="30" r="2.1" fill="url(#spark)"/>
+    <circle cx="200" cy="52" r="1.8" fill="url(#spark)"/>
+    <circle cx="214" cy="122" r="2.2" fill="url(#spark)"/>
+    <circle cx="38" cy="162" r="2" fill="url(#spark)"/>
+    <circle cx="54" cy="198" r="2.1" fill="url(#spark)"/>
+    <circle cx="194" cy="198" r="2.1" fill="url(#spark)"/>
+    <circle cx="214" cy="170" r="1.8" fill="url(#spark)"/>
+    <circle cx="172" cy="214" r="1.8" fill="url(#spark)"/>
+  </g>
+
+  <g filter="url(#glow)">
+    <path d="M21 145C58 193 112 203 156 170C185 150 203 139 235 141" fill="none" stroke="url(#ring)" stroke-width="14" stroke-linecap="round"/>
+    <path d="M41 188C93 220 170 216 230 168" fill="none" stroke="url(#ring)" stroke-width="10" stroke-linecap="round" opacity="0.9"/>
+    <path d="M20 126C82 126 100 90 132 72C165 54 195 58 235 72" fill="none" stroke="url(#ring)" stroke-width="8" stroke-linecap="round" opacity="0.8"/>
+  </g>
+
+  <g>
+    <path d="M40 187V86h38c28 0 43 14 43 35 0 21-15 35-43 35H40zm31-18h6c12 0 20-5 20-17 0-12-8-17-20-17h-6v34z" fill="url(#textFill)" stroke="url(#blueEdge)" stroke-width="2.2"/>
+    <path d="M122 87h-19v100h19V87z" fill="url(#textFill)" stroke="url(#blueEdge)" stroke-width="2.2"/>
+    <path d="M192 187V86h-25l-22 25v18l18-19h12v77h17z" fill="url(#textFill)" stroke="url(#blueEdge)" stroke-width="2.2"/>
+  </g>
+
+  <g fill="url(#spark)" filter="url(#glow)">
+    <path d="M131 44l4 10 10 4-10 4-4 10-4-10-10-4 10-4 4-10z"/>
+    <path d="M203 82l3 8 8 3-8 3-3 8-3-8-8-3 8-3 3-8z"/>
+    <path d="M182 154l3 8 8 3-8 3-3 8-3-8-8-3 8-3 3-8z"/>
+  </g>
 </svg>
