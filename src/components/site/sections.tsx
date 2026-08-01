@@ -61,7 +61,7 @@ const TECH = [
   { name: "Make", icon: <BrandIcon src="/icon/Make.png" alt="Make" /> },
   { name: "GoHighLevel", icon: <BrandIcon src="/icon/Gohighlevel.jpeg" alt="GoHighLevel" /> },
   { name: "Claude", icon: <BrandIcon src="/icon/Claude_Symbol_1.png" alt="Claude" /> },
-  { name: "OpenAI", icon: <BrandIcon src="/icon/OpenAI.png" alt="OpenAI" /> },
+  { name: "OpenAI", icon: <BrandIcon src="/icon/OpenAI.svg" alt="OpenAI" /> },
   { name: "Google Gemini", icon: <BrandIcon src="/icon/gemini.webp" alt="Google Gemini" /> },
   { name: "REST APIs", icon: <BrandIcon src="/icon/rest%20api.png" alt="REST APIs" /> },
   { name: "Google Workspace", icon: <BrandIcon src="/icon/google%20workspace.png" alt="Google Workspace" /> },

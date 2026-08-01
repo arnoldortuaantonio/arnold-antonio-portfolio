@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="OpenAI icon">
+  <rect width="256" height="256" rx="56" fill="#0b0f17"/>
+  <circle cx="128" cy="128" r="78" fill="none" stroke="#f5f7fb" stroke-width="18"/>
+  <path d="M128 58c-28 0-52 19-60 46h36c6-10 17-16 30-16 18 0 32 14 32 32s-14 32-32 32c-13 0-24-6-30-16H68c8 27 32 46 60 46 35 0 64-29 64-64s-29-64-64-64z" fill="#f5f7fb"/>
+  <circle cx="128" cy="128" r="10" fill="#0b0f17"/>
+</svg>
