@@ -50,7 +50,7 @@ const BrandIcon = ({ src, alt }: { src: string; alt: string }) => (
   <img
     src={src}
     alt={alt}
-    className="h-6 w-6 rounded-md object-contain bg-transparent"
+    className="h-7 w-7 rounded-md object-contain bg-transparent"
     loading="lazy"
   />
 );
