@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="ElevenLabs icon">
+  <defs>
+    <linearGradient id="elevenlabsBg" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#0d1220"/>
+      <stop offset="100%" stop-color="#070b14"/>
+    </linearGradient>
+    <linearGradient id="elevenlabsGlow" x1="0%" x2="100%" y1="0%" y2="0%">
+      <stop offset="0%" stop-color="#a78bfa"/>
+      <stop offset="100%" stop-color="#f472b6"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="128" height="128" rx="28" fill="url(#elevenlabsBg)"/>
+  <path d="M34 34h60v10H45v13h46v10H45v13h49v10H34V34z" fill="url(#elevenlabsGlow)"/>
+  <path d="M61 34h12v60H61z" fill="#f8f9ff" opacity="0.92"/>
+  <path d="M40 26c9-7 18-9 35-9 24 0 43 14 43 35v2H86c-9 0-16 8-16 18 0 10 7 18 16 18h32v2c0 26-20 42-46 42-25 0-42-17-42-40v-5c0-15 8-29 22-36l-9-8 8-9z" fill="url(#elevenlabsGlow)" opacity="0.9"/>
+</svg>
