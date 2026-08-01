@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { CyberCursor } from "@/components/site/cyber-cursor";
 import { SiteHeader } from "@/components/site/site-header";
 import { Hero } from "@/components/site/hero";
-import { Process, TechStack, Services, Experience } from "@/components/site/sections";
+import { Process, TechStack, Services, WorkflowDiagram, Experience } from "@/components/site/sections";
 import { Projects } from "@/components/site/projects";
 import { Certifications, Contact, SiteFooter } from "@/components/site/extras";
 
@@ -42,6 +42,7 @@ function Index() {
         <TechStack />
         <Services />
         <Experience />
+        <WorkflowDiagram />
         <Projects />
         <Certifications />
         <Contact />

@@ -100,6 +100,165 @@ export function TechStack() {
   );
 }
 
+export function WorkflowDiagram() {
+  return (
+    <section id="workflow" className="relative border-t border-white/5 py-24 lg:py-32">
+      <div className="mx-auto max-w-7xl px-5 lg:px-8">
+        <SectionHeading
+          eyebrow="Architecture"
+          title="AI-powered Facebook Messenger automation"
+          subtitle="A live conversational system where inbound messages are captured, enriched with business context, and converted into intelligent responses backed by memory and knowledge sources."
+        />
+
+        <div className="mt-14 overflow-x-auto pb-4">
+          <div className="workflow-canvas">
+            <svg className="workflow-connections" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <defs>
+                <filter id="workflow-glow" x="-30%" y="-30%" width="160%" height="160%">
+                  <feGaussianBlur stdDeviation="3" result="blur" />
+                  <feMerge>
+                    <feMergeNode in="blur" />
+                    <feMergeNode in="blur" />
+                    <feMergeNode in="SourceGraphic" />
+                  </feMerge>
+                </filter>
+              </defs>
+
+              <path d="M 200 325 L 220 325" className="workflow-connection-path" />
+              <path d="M 400 325 L 420 325" className="workflow-connection-path" />
+              <path d="M 560 325 L 780 325" className="workflow-connection-path" />
+              <path d="M 750 140 C 765 140, 765 295, 780 295" className="workflow-connection-path" />
+              <path d="M 750 515 C 765 515, 765 355, 780 355" className="workflow-connection-path" />
+              <path d="M 980 325 L 1000 325" className="workflow-connection-path" />
+              <path d="M 1085 220 L 1085 35 C 1085 20, 1070 20, 1055 20 L 665 20 C 650 20, 665 20, 665 35 L 665 70" className="workflow-connection-path workflow-connection-loop" />
+
+              <circle r="3.5" fill="#38bdf8" filter="url(#workflow-glow)">
+                <animateMotion dur="1.5s" repeatCount="indefinite"><mpath href="#workflow-track-1" /></animateMotion>
+              </circle>
+              <circle r="3.5" fill="#38bdf8" filter="url(#workflow-glow)">
+                <animateMotion dur="1.5s" repeatCount="indefinite" begin="0.7s"><mpath href="#workflow-track-1" /></animateMotion>
+              </circle>
+              <circle r="3.5" fill="#38bdf8" filter="url(#workflow-glow)">
+                <animateMotion dur="1.5s" repeatCount="indefinite"><mpath href="#workflow-track-2" /></animateMotion>
+              </circle>
+              <circle r="3.5" fill="#38bdf8" filter="url(#workflow-glow)">
+                <animateMotion dur="2s" repeatCount="indefinite" begin="1s"><mpath href="#workflow-track-3" /></animateMotion>
+              </circle>
+              <circle r="3.5" fill="#38bdf8" filter="url(#workflow-glow)">
+                <animateMotion dur="2s" repeatCount="indefinite" begin="1.5s"><mpath href="#workflow-track-3" /></animateMotion>
+              </circle>
+              <circle r="3.5" fill="#c084fc" filter="url(#workflow-glow)">
+                <animateMotion dur="2s" repeatCount="indefinite" begin="0.3s"><mpath href="#workflow-track-4" /></animateMotion>
+              </circle>
+              <circle r="3.5" fill="#34d399" filter="url(#workflow-glow)">
+                <animateMotion dur="2s" repeatCount="indefinite" begin="0.6s"><mpath href="#workflow-track-5" /></animateMotion>
+              </circle>
+              <circle r="3.5" fill="#f472b6" filter="url(#workflow-glow)">
+                <animateMotion dur="4s" repeatCount="indefinite"><mpath href="#workflow-track-6" /></animateMotion>
+              </circle>
+            </svg>
+
+            <path id="workflow-track-1" d="M 200 325 L 220 325" />
+            <path id="workflow-track-2" d="M 400 325 L 420 325" />
+            <path id="workflow-track-3" d="M 560 325 L 780 325" />
+            <path id="workflow-track-4" d="M 750 140 C 765 140, 765 295, 780 295" />
+            <path id="workflow-track-5" d="M 750 515 C 765 515, 765 355, 780 355" />
+            <path id="workflow-track-6" d="M 1085 220 L 1085 35 C 1085 20, 1070 20, 1055 20 L 665 20 C 650 20, 665 20, 665 35 L 665 70" />
+
+            <div className="workflow-loop-label">
+              <div className="workflow-loop-title">🔄 Memory Loop</div>
+              <div className="workflow-loop-desc">Save conversation • update context</div>
+            </div>
+
+            <div className="workflow-node" style={{ left: "30px", top: "270px", width: "170px", height: "110px" }}>
+              <div className="workflow-node-header">
+                <span className="workflow-node-icon">💬</span> Messenger
+              </div>
+              <div className="workflow-bubble">
+                <strong>User:</strong> Hi, I want to know more about your service.
+              </div>
+            </div>
+
+            <div className="workflow-node" style={{ left: "220px", top: "240px", width: "180px", height: "170px" }}>
+              <div className="workflow-node-header">
+                <span className="workflow-node-icon">⚡</span> n8n Webhook
+              </div>
+              <div className="workflow-json-block">
+                <div>{"{"}</div>
+                <div className="workflow-json-line"><span className="workflow-json-key">"Name"</span>: <span className="workflow-json-val">"User"</span>,</div>
+                <div className="workflow-json-line"><span className="workflow-json-key">"Message"</span>: <span className="workflow-json-val">"Hi..."</span>,</div>
+                <div className="workflow-json-line"><span className="workflow-json-key">"User ID"</span>: <span className="workflow-json-val">"104928"</span>,</div>
+                <div className="workflow-json-line"><span className="workflow-json-key">"Time"</span>: <span className="workflow-json-val">"14:02"</span></div>
+                <div>{"}"}</div>
+              </div>
+            </div>
+
+            <div className="workflow-node" style={{ left: "420px", top: "280px", width: "140px", height: "90px" }}>
+              <div className="workflow-node-header">
+                <span className="workflow-node-icon">⚙️</span> Processing
+              </div>
+              <div className="workflow-processing-animation">
+                <span className="workflow-bar" />
+                <span className="workflow-bar" />
+                <span className="workflow-bar" />
+                <span className="workflow-bar" />
+              </div>
+              <div className="workflow-processing-status">Structuring...</div>
+            </div>
+
+            <div className="workflow-node" style={{ left: "580px", top: "70px", width: "170px", height: "140px" }}>
+              <div className="workflow-node-header">
+                <span className="workflow-node-icon">🧠</span> Memory
+              </div>
+              <div className="workflow-tag-list">
+                <div className="workflow-tag">Previous messages</div>
+                <div className="workflow-tag">User context</div>
+                <div className="workflow-tag">Preferences</div>
+              </div>
+            </div>
+
+            <div className="workflow-node" style={{ left: "580px", top: "440px", width: "170px", height: "150px" }}>
+              <div className="workflow-node-header">
+                <span className="workflow-node-icon">📄</span> Google Docs
+              </div>
+              <div className="workflow-tag-list">
+                <div className="workflow-tag">Business knowledge</div>
+                <div className="workflow-tag">FAQs</div>
+                <div className="workflow-tag">Services</div>
+                <div className="workflow-tag">Policies</div>
+              </div>
+            </div>
+
+            <div className="workflow-node workflow-node--primary" style={{ left: "780px", top: "250px", width: "200px", height: "150px" }}>
+              <div className="workflow-node-header">
+                <span className="workflow-node-icon">✨</span> Gemini AI Agent
+              </div>
+              <div className="workflow-gemini-steps">
+                <div className="workflow-step">Understand <span className="workflow-arrow">↓</span></div>
+                <div className="workflow-step">Retrieve <span className="workflow-arrow">↓</span></div>
+                <div className="workflow-step">Reason <span className="workflow-arrow">↓</span></div>
+                <div className="workflow-step">Generate response <span className="workflow-arrow">→</span></div>
+              </div>
+            </div>
+
+            <div className="workflow-node" style={{ left: "1000px", top: "220px", width: "170px", height: "210px" }}>
+              <div className="workflow-node-header">
+                <span className="workflow-node-icon">💬</span> Messenger
+              </div>
+              <div className="workflow-bubble workflow-bubble--ai">
+                <strong>AI:</strong> Absolutely! I can help you with that. Our team offers several automation services...
+              </div>
+              <div className="workflow-bubble workflow-bubble--reply">
+                <strong>User:</strong> Thanks! I&apos;d like to book a consultation.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 const SERVICES = [
   {
     title: "GoHighLevel & CRM",
@@ -176,28 +335,28 @@ export function Services() {
 
 const TIMELINE = [
   {
-    period: "Dec 2025 – Present",
-    role: "Automation Specialist",
+    period: "2022 – Present",
+    role: "AI Automation Specialist & GHL Consultant",
     org: "AOA Automation Hub",
-    body: "RPA, scripting, and scalable automation frameworks.",
+    body: "Designing AI-powered workflows, CRM automations, API integrations, and lead systems that eliminate repetitive work and improve conversion performance.",
   },
   {
-    period: "Jul 2019 – Dec 2025",
-    role: "Inventory Clerk",
+    period: "2019 – 2025",
+    role: "Inventory Clerk / Operations Support",
     org: "DRB Sales Inc. — Urdaneta City, Pangasinan",
-    body: "90% reduction in discrepancies and a 30% efficiency gain.",
+    body: "Maintained inventory accuracy, reconciled records, supported operational reporting, and improved process visibility across high-volume workflows.",
   },
   {
-    period: "Dec 2010 – Dec 2015",
+    period: "2010 – 2015",
     role: "Data Entry Specialist",
     org: "Bha Seng Sei Contract Solutions",
-    body: "High-volume data accuracy and process documentation.",
+    body: "Handled large-volume data processing, records maintenance, and workflow documentation with a strong focus on accuracy and consistency.",
   },
   {
-    period: "2008-2010",
+    period: "2008 – 2010",
     role: "Data Entry Specialist",
     org: "GE Marketing — Sto. Niño, Caloocan City",
-    body: "Records management and reporting support.",
+    body: "Managed documentation, reporting support, and data organization for fast-moving operational processes.",
   },
 ];
 
@@ -205,7 +364,7 @@ export function Experience() {
   return (
     <section id="about" className="relative border-t border-white/5 py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
-        <SectionHeading eyebrow="Experience" title="A 14+ year paper trail of clean data." />
+        <SectionHeading eyebrow="Experience" title="From clean data to smarter systems." />
         <div className="mt-14 space-y-10 border-l border-white/10 pl-6 sm:pl-10">
           {TIMELINE.map((t, i) => (
             <Reveal key={t.period} delay={i * 80}>

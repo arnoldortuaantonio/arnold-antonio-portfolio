@@ -6,6 +6,7 @@ const CALENDLY_URL = "https://calendly.com/arnold-ortua-antonio/30min?back=1&mon
 const LINKS = [
   ["Process", "#process"],
   ["Services", "#services"],
+  ["Workflow", "#workflow"],
   ["Projects", "#projects"],
   ["Certifications", "#certifications"],
   ["About", "#about"],
